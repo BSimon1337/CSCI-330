@@ -65,7 +65,7 @@ struct _data* LOAD(FILE* stream, int size) {
             return NULL;
         }
 
-        strcpy_s(BlackBox[index].name, strlen(name) + 1, name);
+        strcpy(BlackBox[index].name,name);
         BlackBox[index].number = atol(number);
 
         index++;
@@ -108,7 +108,7 @@ int main(int argc, char** argv) {
         return 1; // Exit if no name is provided
     }
 
-    FILE* file = fopen("C:\\Users\\Beau\\source\\repos\\Assignment 5\\hw5.data.txt", "r");
+    FILE* file = fopen("hw5.data.txt", "r");
     if (file == NULL) {
         printf("Error: Could not open the file. \n");
         return 1;
